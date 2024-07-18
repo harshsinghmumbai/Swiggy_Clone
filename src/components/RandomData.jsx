@@ -1,4 +1,4 @@
-const Configure = {
+const RandomData = {
   mainNav: [
     {
       title: "Documentation",
@@ -321,4 +321,4 @@ const Configure = {
     },
   ],
 };
-export default Configure;
+export default RandomData;

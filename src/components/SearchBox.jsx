@@ -8,7 +8,7 @@ import {
   SunIcon,
 } from "@radix-ui/react-icons";
 import { useTheme } from "next-themes";
-import Configure from "@/components/Configure";
+import Configure from "@/components/RandomData";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
@@ -22,7 +22,7 @@ import {
 } from "@/components/ui/command";
 import { useEffect, useState, useCallback } from "react";
 
-export function SearchBox({ ...props }) {
+export function SearchBox() {
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const { setTheme } = useTheme();
@@ -55,17 +55,14 @@ export function SearchBox({ ...props }) {
     <>
       <Button
         variant="outline"
-        className={cn(
-          "relative h-8 w-full justify-start rounded-[0.5rem] bg-background text-sm font-normal text-muted-foreground shadow-none sm:pr-12 md:w-full lg:w-96"
-        )}
+        className="relative h-8 w-full justify-start rounded-[0.5rem] bg-background text-sm font-normal text-muted-foreground shadow-none sm:pr-12 md:w-full lg:w-96"
         onClick={() => setOpen(true)}
-        {...props}
       >
         <span className="hidden lg:inline-flex">Search documentation...</span>
         <span className="inline-flex lg:hidden">Search...</span>
-        <kbd className="pointer-events-none absolute right-[0.3rem] top-[0.3rem] hidden h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex">
+        <p className="pointer-events-none absolute right-[0.3rem] top-[0.3rem] hidden h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex">
           <span className="text-xs">⌘</span>K
-        </kbd>
+        </p>
       </Button>
 
       <CommandDialog open={open} onOpenChange={setOpen}>
